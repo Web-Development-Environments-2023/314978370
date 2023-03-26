@@ -7,11 +7,14 @@
 html{
     font-family: 'Magic School One';
     text-align: center;
+    background-image: url(images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: whitesmoke;
 }
 
 #menu
 {
-    overflow: hidden;
     font-size: 150%;
 	position: fixed;
 	margin-top: 0;
@@ -23,6 +26,7 @@ html{
     right: 0px;
     table-layout: fixed;
     width: 100%;
+    z-index: 99999;
 }
 
 li {
@@ -37,7 +41,7 @@ li a {
     transform: scale();
     text-align: center;
     display: block;
-    color: black;
+    color: whitesmoke;
     padding: 2vh 2vw;
     text-decoration: none;
     border-left: 1px solid grey;
@@ -120,8 +124,8 @@ button{
 }
 
 .imgNumber {
-    color: #2f2f2f;
-    font-size: 12px;
+    color: whitesmoke;
+    font-size: 250%;
     padding: 8px 12px;
     position: absolute;
     top: 0;
@@ -135,10 +139,15 @@ button{
 
 .previewColumn{
     float: left;
-    width: 12.5%;
+    width:12.5%;
+    vertical-align: auto;
 }
 
 img{
     width: 100%;
 }
 
+
+p{
+    font-size: 220%;
+}
