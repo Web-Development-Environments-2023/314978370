@@ -5,33 +5,23 @@
 </head>
 <body>
 <div id="menu">
-<li><a href="#about">About Me</a></li>
-<li><a href="#photos">My Photos</a></li>
-<li><a href="#playlist">My Playlist</a></li>
-<li><a href="#like">Like</a></li>
-<li><a href="#qrcoder">QR code</a></li>
-<li><a href="#spa">Q&A</a></li>
-<li><a href="#contact">Contact Me</a></li>
+  <li><img src="images/logo.png" alt="No Logo"></li>
+  <li><a href="#about">About Me</a></li>
+  <li><a href="#photos">My Photos</a></li>
+  <li><a href="#playlist">My Playlist</a></li>
+  <li><a href="#like">Like</a></li>
+  <li><a href="#qrcoder">QR code</a></li>
+  <li><a href="#spa">Q&A</a></li>
+  <li><a href="#contact">Contact Me</a></li>
 </div>
 		  
 <section id="about" class="section">
+
 <br/>
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-about me
+<h3>About me </h3>
 <br/>
 <br/>
 <br/>
@@ -43,18 +33,80 @@ about me
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my photos
+<h3>My photos</h3>
+<div class="imgContainer">
+
+  <div class="slides">
+    <div class="imgNumber">1 / 8</div>
+    <img src="images/img1.jpg" alt="Image 1">
+  </div>
+
+  <div class="slides">
+    <div class="imgNumber">2 / 8</div>
+    <img src="images/img2.jpg" alt="Image 2">
+  </div>
+
+  <div class="slides">
+    <div class="imgNumber">3 / 8</div>
+    <img src="images/img3.jpg" alt="Image 3">
+  </div>
+
+  <div class="slides">
+    <div class="imgNumber">4 / 8</div>
+    <img src="images/img4.jpg" alt="Image 4">
+  </div>
+
+  <div class="slides">
+    <div class="imgNumber">5 / 8</div>
+    <img src="images/img5.jpg" alt="Image 5">
+  </div>
+
+  <div class="slides">
+    <div class="imgNumber">6 / 8</div>
+    <img src="images/img6.jpg" alt="Image 6">
+  </div>
+
+  <div class="slides">
+    <div class="imgNumber">7 / 8</div>
+    <img src="images/img7.jpg" alt="Image 7">
+  </div>
+
+  <div class="slides">
+    <div class="imgNumber">8 / 8</div>
+    <img src="images/img8.jpg" alt="Image 8">
+  </div>
+
+  <button class="previousButton" onclick="plusSlides(-1)">&#10094;</button>
+  <button class="nextButton" onclick="plusSlides(1)">&#10095;</button>
+
+  <div class="previewRow">
+    <div class="previewColumn">
+      <img class="cursor" src="images/img1.jpg" alt="Image1"  onclick="currentSlide(1)">
+    </div>
+    <div class="previewColumn">
+      <img class="cursor" src="images/img2.jpg" alt="Image2" onclick="currentSlide(2)">
+    </div>
+    <div class="previewColumn">
+      <img class="cursor" src="images/img3.jpg" alt="Image3" onclick="currentSlide(3)">
+    </div>
+    <div class="previewColumn">
+      <img class="cursor" src="images/img4.jpg" alt="Image4" onclick="currentSlide(4)">
+    </div>
+    <div class="previewColumn">
+      <img class="cursor" src="images/img5.jpg" alt="Image5" onclick="currentSlide(5)">
+    </div>
+    <div class="previewColumn">
+      <img class="cursor" src="images/img6.jpg" alt="Image6" onclick="currentSlide(6)">
+    </div>
+    <div class="previewColumn">
+      <img class="cursor" src="images/img7.jpg" alt="Image7" onclick="currentSlide(7)">
+    </div>
+    <div class="previewColumn">
+      <img class="cursor" src="images/img8.jpg" alt="Image8" onclick="currentSlide(8)">
+    </div>
+  </div>
+
+</div>
 <br/>
 <br/>
 <br/>
@@ -65,20 +117,8 @@ my photos
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my playlist
-<br/>
+<h3>My playlist</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UuPb1J_RCJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <br/>
 <br/>
 </section>
@@ -100,7 +140,7 @@ my playlist
 <br/>
 <br/>
 <br/>
-give me a like
+<h3>Give me a like</h3>
 <br/>
 <br/>
 <br/>
@@ -123,7 +163,7 @@ give me a like
 <br/>
 <br/>
 <br/>
-scan my code
+<h3>Scan my code</h3>
 <br/>
 <br/>
 <br/>
@@ -169,7 +209,7 @@ ans
 <br/>
 <br/>
 <br/>
-contact me
+<h3>Contact me</h3>
 <br/>
 <br/>
 <br/>
@@ -189,5 +229,35 @@ $(function(){
     $('#menu').toggle($(this).scrollTop()>1000)
  });​
  </script>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("slides");
+    let dots = document.getElementsByClassName("cursor");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+  </script>
 </body>
 </html>
